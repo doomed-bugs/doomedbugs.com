@@ -1,0 +1,915 @@
+/*
+-------------------------------------
+author: Chris Brickley
+version: 1.1
+title: screen style sheet
+created: 2003-Aug-11 00:28 -0500
+last-modified: 2011-Jun-19 11:38 -0500
+-------------------------------------
+*/
+
+/* ##### Common Styles ##### */
+#centerbar object {
+	padding: 0;
+	margin: 0;
+}
+body {
+	color: black;
+	background-color: white;
+  font-family: verdana, arial, serif;
+	font-size: 76%; /*Enables font size scaling in MSIE */
+	margin: 0;
+	padding: 0;
+}
+acronym, .titleTip {
+	border-bottom: 1px dotted rgb(153,153,153);
+	cursor: help;
+	margin: 0;
+	padding: 0 0 0.4px 0;
+}
+.doNotDisplay {
+	display: none;
+}
+.smallCaps {
+	font-size: 110%;
+	font-variant: small-caps;
+}
+br, .clear { clear:both; }
+.none { clear: none; }
+
+.undln {
+	text-decoration: underline;
+}
+/* Header */
+
+#header {
+	width: 100%;
+	background-color: rgb(140,170,230);
+}
+#superHeader {
+	color: white;
+	background-color: rgb(100,135,220);
+	height: 2em;
+}
+#superHeader a {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+	font-size: 91%;
+	margin: 0;
+	padding: 0 0.5ex 0 0.25ex;
+}
+#superHeader a:hover {
+	text-decoration: underline;
+}
+#superHeader .left {
+	position: absolute;
+	left: 1.5mm;
+	top: 0.75ex;
+}
+#superHeader .right {
+	position: absolute;
+	right: 1.5mm;
+	top: 0.75ex;
+}
+#midHeader {
+	color: rgb(39,78,144);
+	background-color: rgb(140,170,230);
+}
+.headerTitle {
+	margin: 1.2em 0 1.2em 0;
+}
+.headerTitle a {
+	font-size: 270%;
+	font-weight: normal;
+	margin: 4mm;
+	padding: 0.25ex 0 0 0;
+	text-decoration: none;
+	color: rgb(0,51,153);
+	display: inline;
+	line-height: 1em;
+}
+fieldset {
+	width: 30em;
+	border: none;
+}
+#header-search {
+	position: absolute;
+	right: 2mm;
+	top: 3.8em;
+	display: inline;
+	height: auto;
+	vertical-align: middle;
+}
+html>body #header-search {
+	top: 3.2em;
+}
+.buttonover, .buttonout {
+ 	color: white;
+	font-weight: 600;
+	font-size: 100%;
+	letter-spacing: .1em;
+	background-color: rgb(140,198,140);
+	border: 1px solid white;
+	padding: 2px;
+	margin: 0;
+	float: right;
+	text-align: center;
+}
+.buttonout {
+	background-color: rgb(100,135,220);
+}
+.searchbutton, .buttondown {
+	color: black;
+	border: 1px solid rgb(100,135,220);
+	float: right;
+	margin: .25em 1em 0 0;
+	vertical-align: middle;
+	width: 10em;
+	font-size: 100%;
+	padding: 2px;
+	letter-spacing: .1em;
+	line-height: 1em;
+}
+html>body .searchbutton, .buttondown {
+	margin: .1em 1em 0 0;
+}
+.buttondown {
+	border: 1px solid black;
+}
+#subHeader {
+	color: white;
+	background-color: rgb(0,51,153);
+	margin: 0;
+	padding: 1ex 1ex 1ex 1.5mm;
+	text-align: center;
+}
+#subHeader a {
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 2.75ex;
+}
+#subHeader a:hover {
+	text-decoration: underline;
+}
+#subHeader .leftborder {
+	border-left: 1px solid white;
+}
+#subHeader .sideborder {
+	border: solid white;
+	border-width: 0 1px;
+}
+#subHeader .highlightleft {
+	border-left: 1px solid white;
+	color: rgb(253,160,91);
+}
+#subHeader .highlightboth {
+	border: solid white;
+	border-width: 0 1px;
+	color: rgb(253,160,91);
+}
+/* Menu Bars */
+
+#leftbar, #rightbar {
+	background-color: white;
+	margin: 0 0 1em 0;
+}
+#rightbar {
+	float: right;
+	width: 15%; 
+	border-left: 1px solid rgb(153,153,153);
+}
+#leftbar {
+	float: left;
+	width: 18%;
+	border-right: 1px solid rgb(153,153,153);
+}
+#leftbar div, #rightbar div {
+	border-bottom: 1px solid rgb(153,153,153);
+}
+.BarTitle {
+	font-weight: bold;
+	margin: 0 0 .5em 2.5mm;
+	padding: 1em 0 0 0;
+}
+#leftbar ul, #rightbar ul	{
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 0;
+	padding: 0 0 1.1em 0;
+}
+#leftbar li, #rightbar li {
+	margin: 0;
+	padding: 0.1ex 0; /* Circumvents a rendering bug (?) in MSIE 6.0 */
+	width: 100%;
+}
+#leftbar a, #rightbar a, #leftbar .current {
+	color: rgb(0,102,204);
+	background-color: transparent;
+	text-decoration: none;
+	margin: 0;
+	padding: 0.75em 1ex 0.75em 5mm;
+	display: block;
+	width: 100%;
+}
+html>body #leftbar a, #rightbar a, #leftbar .current {
+	width: auto;
+}
+#leftbar a:hover, #rightbar a:hover {
+	color: white;
+	background-color: rgb(100,135,220);
+	text-decoration: none;
+}
+#leftbar .current {
+	color: black;
+	text-decoration: none;
+	border-top: 1px solid rgb(153,153,153);
+	border-bottom: 1px solid rgb(153,153,153);
+	padding: 0.75em 1ex 0.75em 7mm;
+}
+#leftbar .BarText, #rightbar .BarText {
+	line-height: 1.5em;
+	margin: 0 0 1em 0;
+	padding: 0 1.5ex 0 2.5mm;
+	display: block;
+}
+#leftbar .BarText a, #rightbar .BarText a {
+	width: auto;
+	text-decoration: underline;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+#leftbar .BarText a:hover, #rightbar .BarText a:hover {
+	color: rgb(0,102,204);
+	background-color: transparent;
+	text-decoration: none;
+}
+.lighterBackground {
+	color: inherit;
+	background-color: #f0f0f0;
+} 
+.lighterBackgroundright {
+	color: inherit;
+	background-color: #B0C3F0;
+}
+.google {
+	color: inherit;
+	background-color: white;
+	text-align: center;
+	padding: .75em 0;
+}
+
+/* CenterBar */
+
+#centerbar {
+	float: right;
+	width: 78.5%;
+	background-color: white;
+	text-align: justify;
+	line-height: 1.5em;
+	margin: 0 0 1em 0;
+	padding: 0;
+	font-size: 115%;
+}
+#centerbar p, #centerbar pre {
+   margin: 1em 0 0 0;
+	padding: 0 3em;
+}
+#centerbar .forie {
+	padding: 0 1em;
+}
+#centerbar p a, #centerbar p a:hover {
+	display: inline;
+}
+#centerbar a, #centerbar a:hover {
+	color: rgb(100,135,220); /* or	rgb(100,135,220) rgb(140,170,230) */
+	text-decoration: underline;
+	display: block;
+	background-color: transparent;
+	border: 1px solid white;
+}
+#centerbar a:hover {
+	color: rgb(0,51,153);
+	background-color: #f0f0f0;
+	border: 1px solid #BBBBBB;
+}
+#centerbar h1 {
+	color: white;
+	background-color: rgb(100,135,220);
+	font-size: 83%;
+	font-weight: normal;
+	margin: 3em 6ex 0 6ex; /*right, blue header length	change */
+	padding: 0.5ex 0 0.5ex 1ex;
+}
+#centerbar h1 a, #centerbar h1 a:hover {
+	background-color: rgb(100,135,220);
+	color: white;
+	text-decoration: underline;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	border: none;
+}
+#centerbar .current {
+	font-weight: bold;
+	text-decoration: none;
+}
+#centerbar h1 a:hover {
+	background-color: rgb(100,135,220);
+	text-decoration: none;
+}
+#centerbar h2 {
+	font-size: 130%;
+	margin: 0 0 1em 0;
+	padding: .75em;
+	text-align: center;
+	color: black;
+	border-bottom: 1px dotted #7A7A7A;
+	background: #f0f0f0 url("/images/bug.gif") no-repeat .5em;
+}
+#centerbar .index {
+	font-size: 110%;
+}
+#centerbar h3 {
+	font-size: 90%;
+	font-weight: bold;
+	margin: 2em 2em -1em 2.5em;
+	padding: .25em .25em 0 .85em;
+	color: #0066CC;
+	text-decoration: underline;
+	border: none;
+	display: block;
+	float: none;
+	position: relative;
+	letter-spacing: 1px;
+	height: 1%;
+	clear: both;
+}
+#centerbar .h3menu {
+   margin: 2.5em 0 .75em 1em;
+	display: inline;
+	border: none;
+	padding: .25em;
+	float: left;
+	text-decoration: none;
+}
+#centerbar .h3menu a, #centerbar .h3menu a:hover {
+	text-decoration: none;
+	color: rgb(0,102,204);
+	border: 1px dashed rgb(0,102,204);
+	display: inline;
+	padding: .25em;
+}
+#centerbar .h3menu a:hover {
+	background-color: #f0f0f0;
+	border: 1px solid rgb(0,102,204);
+}
+.content {
+	margin: 1em 0 0 0;
+	padding: 0;
+	border: 1px solid #4169E1 !important; /*content box */
+	display: block;
+	float: none;
+	position: relative;
+}
+html>body .content {
+	position: static;
+}
+/* list for sitemap */
+#centerbar .sitemap {
+	margin: 1.5em 0 .75em .75em;
+	padding: .25em;
+	line-height: 0;
+}
+#centerbar li {
+	line-height: 1.5em;
+	margin: 0;
+	padding: .2em;
+	list-style: square outside;
+	text-align: left;
+	text-transform: none;
+	font-weight: normal;
+}
+#centerbar li a, #centerbar li a:hover{
+	display: inline;
+}
+#centerbar ul {
+	padding: 0;
+	margin: .5em 7em 0 7em;
+}
+#centerbar ol {
+	padding: 0;
+	margin: 0 7em;
+}
+#centerbar .linum {
+	list-style: decimal outside;
+}
+#centerbar .ulsite {
+	padding: 0;
+	margin: 0 3em;
+	list-style: square inside;
+}
+#centerbar .ulcat {
+	padding: 0;
+	margin: 0;
+	text-transform: Capitalize;
+	list-style: square inside;
+}
+#centerbar .sub0 {
+	color: black;
+	font-size: 120%;
+	list-style: square inside;
+	line-height: 1.3em;
+}
+#centerbar .sub1 {
+	text-indent: 2.5em;
+	font-size: 110%;
+	color: green;
+	list-style: square inside;
+	line-height: 1.5em;
+}
+#centerbar .sub2 {
+	text-indent: 6.5em;
+	color: blue;
+	list-style: square inside;
+	line-height: 1.5em;
+}
+#centerbar .nobullet {
+	list-style: none;
+	font-weight: bold;
+}
+/* main image */
+
+#centerbar .picture {
+	float: left;
+	width: auto;
+	padding: 0 0 0 2em;
+}
+#centerbar .picture img {
+	border: 1px solid rgb(153,153,153);
+}
+#centerbar .picture a {
+	border: 2px solid rgb(153,153,153);
+	display: block;
+	padding: 4px;
+	margin: 1em;
+	line-height: 0;
+}
+#centerbar .picture a:hover {
+	border: 2px solid rgb(100,135,220);
+	background-color: white;
+}
+/* products */
+
+#centerbar .prodpicture {
+	float: left;
+	padding: 0;
+	line-height: 0;
+	width: auto;
+}
+#centerbar .prodpicture img {
+	border: 0px solid rgb(153,153,153); /*img border ?*/
+}
+#centerbar .prodpicture a, #centerbar .prodpicture a:hover {
+	border: 2px solid black;
+	display: block;
+	padding: 4px;
+	margin: 0;
+	line-height: 0;
+	background-color: white;
+}
+#centerbar .prodpicture a:hover {
+	border: 2px solid rgb(100,135,220);
+}
+#centerbar .prodtext {
+	display: block;
+	white-space: normal;
+}
+html>body #centerbar .prodtext {
+	min-width: 1%;
+	width: auto;
+}
+#centerbar .prodtext a, #centerbar .prodtext a:hover {
+	vertical-align: middle;
+	display: block;
+	background-color: white;
+	margin: 1.75em 0.5em 0 11em;
+	padding: 1em;
+	font-size: 100%;
+	border: 1px solid black;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+html>body #centerbar .prodtext a, #centerbar .prodtext a:hover {
+	margin: .75em 0.5em 0 11em;
+}
+#centerbar .prodtext a:hover {
+	color: rgb(0,102,204);
+	background-color: white;
+	border: 1px solid rgb(0,102,204);
+}
+#centerbar .prodtext li {
+	line-height: 1.5em;
+	margin: 0;
+	padding: .2em;
+	list-style: square inside;
+	text-align: left;
+	text-transform: none;
+	font-weight: bold;
+}
+#centerbar .relevantlinks, #centerbar .buynowbottom {
+	text-align: center;
+	margin: 1em 0 0 0;
+	padding: 0;
+	vertical-align: middle;
+}
+#centerbar .relevantlinks a, #centerbar .relevantlinks a:hover, #centerbar .buynowbottom a, #centerbar .buynowbottom a:hover {
+	color: rgb(0,102,204);
+	padding: .5em;
+	text-decoration: none;
+	background-color: white;
+	border: 1px solid black;
+	margin: 0 .5em;
+	display: inline;
+	line-height: 0;
+}
+#centerbar .buynowbottom a, #centerbar .buynowbottom a:hover {
+	border: 1px solid rgb(0,102,204);
+	padding: .75em;
+	margin: 2em -1em 0 0;
+	background-color: white;
+	color: rgb(100,135,220);
+	font-weight: bold;
+	font-size: 85%;
+}
+#centerbar .relevantlinks a:hover{
+	background-color: rgb(100,135,220);
+	color: white;
+}
+#centerbar .buynowbottom a:hover {
+	 color: rgb(0,51,153);
+	 background-color: #f0f0f0;
+}
+#centerbar .currentpage {
+	padding: .5em;
+	text-decoration: none;
+	background-color: white;
+	border: 1px solid black;
+	margin: 0 .5em;
+	display: inline;
+	line-height: 0;
+	font-weight: bold;
+}
+#centerbar .break {
+	border-bottom: 1px solid #BBBBBB;
+	margin:	0 1em;
+	padding: 1em 0 0 0;
+	clear: both;
+}
+#centerbar .buyhigh {
+	border-bottom: 1px rgb(0,51,153) dashed;
+}
+#centerbar .buynow {
+	border: 1px solid rgb(0,102,204);
+	padding: .5em;
+	margin: 3em 1.5em 0 0;
+	float: right;
+	background-color: white;
+	color: rgb(100,135,220);
+	font-weight: bold;
+	text-decoration: none;
+	width: 15%;
+	text-align: center;
+	font-size: 85%;
+}
+#centerbar .buynow:hover {
+	border: 1px solid rgb(0,102,204);
+	text-decoration: none;
+}
+html>body #centerbar .buynow {
+	margin: 3em 3em 0 0;
+}
+#centerbar .center {
+	text-align: center;
+}
+#catalog {
+	margin: 0;
+	display: block;
+	width: auto;
+}
+#catalog ul {
+	float: left;
+	margin: 0;
+	padding: 1em;
+}
+#catalog li {
+	list-style: square inside;
+}
+/*js entries */
+
+#centerbar .csscolorsoff, #centerbar .csscolorson {
+	background-color: white;
+	border: 1px solid #BBBBBB;
+	margin: 0 4em;
+	display: block;
+	padding: 1em;
+	width: auto;
+	height: 1%; /* thank you IE */
+	font-size: 85%;
+}
+html>body #centerbar .csscolorsoff, #centerbar .csscolorson {
+	height: auto;
+}
+#centerbar .csscolorson {
+	background-color: #f0f0f0;
+	border: 1px solid #BBBBBB;
+}
+.blue {
+	text-align: left;
+	display: block;
+	font-size: 105%;
+}
+
+/* right/left buy of the month */
+
+.bomText, .bomText a {
+	margin: 0;
+	padding: 0;
+	display: block;
+	text-align: center;
+}
+.color {
+	color: rgb(0,102,204);
+}
+#centerbar .pic, #rightbar .bom, #leftbar .bom { 
+	width: 86px;	/*<-- width + 14 px */
+	margin: 0 auto;
+	display: block;
+}
+#centerbar .pic { 
+	width: auto;
+}
+#centerbar .pic img, #rightbar .bom img, #leftbar .bom img {
+	border: 1px solid rgb(153,153,153);
+}
+#centerbar .pic a, #rightbar .bom a, #leftbar .bom a {
+	border: 2px solid rgb(153,153,153);
+	padding: 4px;
+	line-height: 0;
+	white-space: pre;
+}
+#centerbar .pic a:hover, #rightbar .bom a:hover, #leftbar .bom a:hover {
+	border: 2px solid rgb(100,135,220);
+	background-color: white;
+	color: rgb(0,102,204);
+	white-space: pre;
+}
+#rightbar .centertest {
+	border: 1px solid black;
+}
+/* Footer */
+#footer {
+	width: 100%;
+	clear: both; 
+	color: white;
+	background-color: rgb(100,135,220);
+	font-size: 91%;
+	padding: .5em .5em;
+	margin: 1em 0 0 0;
+}
+html>body #footer { width: auto }
+#footer a {
+	color: white;
+	text-decoration: underline;
+}
+#footer a:hover {
+	text-decoration: none;
+}
+#foottab {
+	width: 100%;
+	font-size: 100%;
+	color: white;
+}
+#footer td {
+	border: none;
+}
+#footer .left {
+	width: 33%;
+	text-align: left;
+}
+#footer .middle {
+	width: 33%;
+	text-align: center;
+  vertical-align: middle;
+}
+#footer .right {
+	width: 33%;
+	text-align: right;
+}
+#footer img {
+	border: none;
+}
+#footer .middle img {
+	margin-left: 3px;
+	margin-right: 3px;
+	padding: 0;
+}
+/* Wrapper */
+#wrapper {
+	float: left;
+	width: 82%;
+	clear: both;
+	margin: 0;
+}
+/* php dig */
+.phpdigHighlight {
+	color: #000000;
+	display: inline;
+	font-weight: bold;
+}
+.phpdigMsg {
+	background-color: #000066;
+	color: white;
+	font-weight: bold;
+}
+.phpdigAlert { 
+	color: red;
+	font-style: italic;
+}
+.grey {
+	padding: 5px;
+	margin-top: 8px;
+	margin-bottom: 18px;
+	margin-right: 4em;
+	border: 2px dotted #BBBBBB;
+	background-color: #f0f0f0;
+	font-size: 90%;
+}
+.phpdigMessage {
+	color: rgb(0,102,204);
+	font-size: 100%;
+	border: solid 1px;
+	padding: 3px;
+}
+/* comparer */
+.tie {
+color: blue;
+}
+td {
+text-align:center;
+border: 1px solid rgb(0,102,204);
+width: 1%;
+}
+tr {
+border: none;
+}
+.win {
+color: green;
+font-weight: bold;
+}
+select {
+font-size: 76%;
+width: auto;
+}
+table.key {
+border-collapse: collapse;
+border-spacing: 0;
+margin: .75em;
+padding: 5em;
+width: 1%;
+}
+table.compare {
+border-collapse: collapse;
+border-spacing: 0;
+margin: 0 2em;
+width: auto;
+}
+.compsubmit {
+padding: .25em;
+margin: .5em;
+background: rgb(140,170,230);
+color: white;
+cursor: pointer;
+}
+.compsubmit:hover{
+background: white;
+color: rgb(0,102,204);
+}
+td.submit {
+text-align: center;
+}
+.field1 {
+border: 1px solid gray;
+margin: 0 0 1em 2em;
+padding: 1em;
+width: 1%;
+}
+.field2 {
+border: none;
+display: inline;
+margin: 0;
+padding: 0;
+width: auto;
+}
+legend {
+font-weight: bold;
+text-align:center;
+color: black;
+}
+/* promote */
+.code {
+margin: .75em 3em;
+background: white;
+border: 1px solid black;
+display: block;
+padding: .5em;
+line-height: 1.25em;
+}
+html>body .code {
+margin: 0 3.5em;
+}
+#centerbar .regimg img {
+border: none;
+background: white;
+}
+#centerbar .regimg a, #centerbar .regimg a:hover {
+border: none;
+background: white;
+margin: .75em 3em;
+display: inline;
+}
+
+/* news feed */
+
+#centerbar dl {
+	margin: 1em;
+	border: 1px solid black;
+	width: 50%;
+	font-size: 75%;
+	line-height: 1.25em;
+}
+#centerbar dt a,#centerbar dt a:hover {
+	display: inline;
+}
+#centerbar dt {
+	margin-bottom: 1em;
+}
+
+/* google search box */
+
+#gsearch {
+	margin-right: 3em;
+	border: none;
+}
+#gsearch  input {
+	vertical-align: middle;
+	margin-top: -1em;
+	border: 1px solid #9EBDD8;
+}
+html>body #gsearch input {
+	margin-top: -1.5em;
+}
+#gsearch a, #gsearch a:hover {
+	display: inline;
+	margin-top: 1em;
+	border: none;
+	background: transparent;
+}
+#gsearch img {
+	border: none;
+}
+
+/* box ad */
+#box {
+	display: inline;
+	float: right;
+	margin: .5em;
+}
+
+/* leaderboard ad */
+.leader {
+	display: block;
+	float: left;
+}
+
+/* new h3box ad */
+#h3box {
+	display: inline;
+	float: left;
+	margin: 0 0 -1em 2.4em;
+	clear: both;
+	font-size: 120%;
+}
+/* new link-unit ad */
+#link-unit {
+	display: block;
+	float: left;
+	margin: -1em 0 -1em 2.7em;
+	clear: both;
+}
+
